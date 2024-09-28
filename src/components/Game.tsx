@@ -25,6 +25,7 @@ export default function Game() {
               <div className={`game__user-item ${status[index]}`}
                 onMouseEnter={() => setMenu(item)}
                 onMouseLeave={() => setMenu("")}
+                key={item}
               >
                 <span className='game__user'>{item}</span>
 
