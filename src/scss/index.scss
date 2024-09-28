@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+body {
+  height: 100%;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.wrapper {
+  max-width: 1080px;
+  min-height: 100vh;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #fff;
+  background-color: #333230;
+
+  * {
+    transition: all 0.2s ease-out;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+}
+
+.top {
+  padding: 10px;
+  border-bottom: 2px solid #D4230E;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.games-bar {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  overflow-x: auto;
+
+  &__wrapper {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+.game__item {
+  padding: 5px 12px;
+  border-bottom: 2px solid #D4230E;
+  border-right: 2px solid #D4230E;
+  text-transform: uppercase;
+  font-size: 14px;
+  background-color: #D4230E;
+  white-space: nowrap;
+
+  &.active {
+    background-color: transparent;
+  }
+}
+
+.new-game,
+.center {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.big-btn {
+  padding: 10px 20px;
+  border-radius: 16px;
+  border: 2px solid #D4230E;
+  color: #fff;
+  font-weight: 700;
+  background-color: transparent;
+  width: 132px;
+}
+
+.new-game input {
+  border: 2px solid #D4230E;
+  width: 132px;
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 16px;
+  color: #fff;
+  outline: none;
+}
+
+.game {
+  &__wrap {
+    width: 100%;
+    padding: 10px;
+  }
+
+  &__users {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+
+  &__user-item {
+    position: relative;
+    border-radius: 10px;
+
+    &.kill {
+      background-color: #D4230E;
+
+      span {
+        display: none;
+      }
+    }
+
+    &.prison {
+      background-color: grey;
+
+      span {
+        display: none;
+      }
+    }
+  }
+
+  &__user-menu {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #333230;
+    opacity: 0;
+    border: 2px solid #D4230E;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12px;
+
+    &.active {
+      opacity: 1;
+      pointer-events: unset;
+    }
+  }
+
+  &__user {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #D4230E;
+    height: 80px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
